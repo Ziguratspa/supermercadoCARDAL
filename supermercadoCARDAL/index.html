@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARDAL - Sistema de Gestión</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-header">
+            <h1>🛒 SUPERMERCADO CARDAL</h1>
+            <p>Sistema de Gestión Empresarial</p>
+        </div>
+        
+        <form id="loginForm" class="login-form">
+            <div class="form-group">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" required placeholder="Ingrese usuario">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required placeholder="Ingrese contraseña">
+            </div>
+            
+            <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                    <input type="radio" name="tipoUsuario" value="TRABAJADOR" checked>
+                    Trabajador
+                </label>
+                <label class="checkbox-label">
+                    <input type="radio" name="tipoUsuario" value="SUPERVISOR">
+                    Supervisor
+                </label>
+            </div>
+            
+            <button type="submit" class="btn-primary">Ingresar</button>
+            
+            <div id="mensaje" class="mensaje"></div>
+        </form>
+        
+        <div class="login-footer">
+            <p>Proyecto Académico - Técnico en Programación y Análisis de Sistemas</p>
+            <p class="credentials-info">
+                <small><strong>Credenciales por defecto:</strong><br>
+                Usuario: admin | Contraseña: admin123</small>
+            </p>
+        </div>
+    </div>
+    
+    <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARDAL - Dashboard Supervisor</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <h2>🛒 CARDAL - Supervisor</h2>
+        </div>
+        <div class="navbar-menu">
+            <span id="fechaHora" class="fecha-hora"></span>
+            <!-- CORREGIDO: Cambiado de login.html a index.html -->
+            <a href="index.html" class="btn-logout">Cerrar Sesión</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="dashboard-grid">
+            <!-- Panel de Reportes por Trabajador -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>👤 Reportes por Trabajador</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="rutTrabajador">Buscar por RUT:</label>
+                        <input type="text" id="rutTrabajador" placeholder="12345678-9">
+                        <button id="btnBuscarPorRut" class="btn-primary">🔍 Buscar</button>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>O seleccionar trabajador:</label>
+                        <select id="selectTrabajador">
+                            <option value="">-- Seleccione un trabajador --</option>
+                        </select>
+                    </div>
+                    
+                    <div id="reporteTrabajador" class="reporte-container"></div>
+                </div>
+            </div>
+            
+            <!-- Panel de Reportes por Área -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>🏢 Reportes por Área</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="selectArea">Seleccionar Área:</label>
+                        <select id="selectArea">
+                            <option value="">-- Seleccione un área --</option>
+                            <option value="panaderia">Panadería</option>
+                            <option value="fiambreria">Fiambrería</option>
+                            <option value="caja">Caja</option>
+                            <option value="prevencion_perdidas">Prevención de Pérdidas</option>
+                            <option value="reposicion">Reposición</option>
+                            <option value="jefatura">Jefatura</option>
+                            <option value="externo">Externo</option>
+                        </select>
+                        <button id="btnBuscarPorArea" class="btn-primary">🔍 Buscar</button>
+                    </div>
+                    
+                    <div id="reporteArea" class="reporte-container"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Panel de Reportes de Mermas -->
+        <div class="card">
+            <div class="card-header">
+                <h3>📦 Reporte de Mermas</h3>
+            </div>
+            <div class="card-body">
+                <div class="button-group">
+                    <button id="btnMermasTotales" class="btn-primary">
+                        📊 Ver Mermas Totales
+                    </button>
+                    <button id="btnMermasDetalladas" class="btn-secondary">
+                        📋 Ver Mermas Detalladas
+                    </button>
+                </div>
+                
+                <div id="reporteMermas" class="reporte-container"></div>
+            </div>
+        </div>
+        
+        <!-- Instrucciones -->
+        <div class="card info-card">
+            <div class="card-header">
+                <h3>ℹ️ Instrucciones</h3>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><strong>Reportes por Trabajador:</strong> Ingrese el RUT o seleccione de la lista para ver asistencias, asignaciones y mermas</li>
+                    <li><strong>Reportes por Área:</strong> Seleccione un área para ver estadísticas de todos los trabajadores de esa área</li>
+                    <li><strong>Reporte de Mermas:</strong> Visualice resumen total o detalle completo de todas las mermas registradas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/supervisor.js"></script>
+</body>
+</html>

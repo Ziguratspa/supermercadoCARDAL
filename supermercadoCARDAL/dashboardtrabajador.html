@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARDAL - Dashboard Trabajador</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .info-ruts {
+            margin-top: 8px;
+            padding: 8px;
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .info-ruts strong {
+            color: #0369a1;
+        }
+
+        .form-group small {
+            display: block;
+            margin-top: 4px;
+            color: #6b7280;
+        }
+        
+        .mensaje {
+            white-space: pre-line;
+            line-height: 1.5;
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .formulario-merma {
+            border: 2px dashed #d1d5db;
+            padding: 20px;
+            margin-top: 15px;
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <h2>🛒 CARDAL - Trabajador</h2>
+        </div>
+        <div class="navbar-menu">
+            <span id="fechaHora" class="fecha-hora"></span>
+            <!-- CORREGIDO: Cambiado de login.html a index.html -->
+            <a href="index.html" class="btn-logout">Cerrar Sesión</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="dashboard-grid">
+            <!-- Panel de Asistencia -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>📋 Registro de Asistencia</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="rut">RUT del Trabajador:</label>
+                        <input type="text" id="rut" placeholder="12345678-9" maxlength="12">
+                        <small class="help-text">Formato: 12345678-9</small>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button id="btnEntrada" class="btn-success" disabled>
+                            🟢 Registrar ENTRADA
+                        </button>
+                        <button id="btnSalida" class="btn-danger" disabled>
+                            🔴 Registrar SALIDA
+                        </button>
+                    </div>
+                    
+                    <div id="mensajeAsistencia" class="mensaje"></div>
+                </div>
+            </div>
+            
+            <!-- Panel de Mermas -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>📦 Registro de Mermas</h3>
+                </div>
+                <div class="card-body">
+                    <button id="btnMostrarFormularioMerma" class="btn-primary">
+                        ➕ Registrar Nueva Merma
+                    </button>
+                    
+                    <div id="formularioMerma" class="formulario-merma" style="display: none;">
+                        <div class="form-group">
+                            <label for="producto">Producto:</label>
+                            <input type="text" id="producto" placeholder="Ej: Pan Hallulla, Jamón, etc.">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="unidades">Unidades:</label>
+                            <input type="number" id="unidades" min="1" value="1">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pesoVolumen">Peso/Volumen:</label>
+                            <input type="number" id="pesoVolumen" step="0.01" min="0" placeholder="Ej: 2.5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="unidadMedida">Unidad de Medida:</label>
+                            <select id="unidadMedida">
+                                <option value="kg">Kilogramos (kg)</option>
+                                <option value="g">Gramos (g)</option>
+                                <option value="l">Litros (l)</option>
+                                <option value="ml">Mililitros (ml)</option>
+                                <option value="unidad">Unidad</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="observaciones">Observaciones:</label>
+                            <textarea id="observaciones" rows="3" placeholder="Describa la razón de la merma"></textarea>
+                        </div>
+                        
+                        <div class="button-group">
+                            <button id="btnRegistrarMerma" class="btn-success">
+                                ✅ Registrar Merma
+                            </button>
+                            <button id="btnCancelarMerma" class="btn-secondary">
+                                ❌ Cancelar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="mensajeMerma" class="mensaje"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Instrucciones -->
+        <div class="card info-card">
+            <div class="card-header">
+                <h3>ℹ️ Instrucciones</h3>
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li><strong>Ingrese su RUT</strong> en el formato indicado (12345678-9)</li>
+                    <li><strong>RUTs de prueba disponibles:</strong> 12345678-9, 23456789-0, 34567890-1, 45678901-2</li>
+                    <li>Para <strong>registrar entrada/salida</strong>: El botón habilitado dependerá de si ya tiene entrada registrada hoy</li>
+                    <li>Para <strong>registrar mermas</strong>: Haga clic en "Registrar Nueva Merma" y complete el formulario</li>
+                    <li>Las <strong>horas extra</strong> se calculan automáticamente cuando supera las 9 horas de trabajo diario</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/trabajador.js"></script>
+</body>
+</html>
