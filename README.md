@@ -2,16 +2,12 @@ ENLACE AL SISTEMA: https://oliveradrianrubiorauldtap.infinityfreeapp.com
 
 # supermercadoCARDAL
 
-Repositorio que alberga todo lo relacionado al desarrollo del sistema de gestión empresarial basado en empresa ficticia "Supermercado CARDAL", en el contexto del Trabajo de Aplicación Práctica para la obtención del grado "Técnico en programación y análisis de sistemas" de Instituto AIEP.
-
-
-# Sistema de Gestión Empresarial CARDAL
-
+Repositorio que alberga todo lo relacionado al desarrollo del sistema de gestión empresarial basado en empresa ficticia "Supermercado CARDAL".
 
 
 ## 📋 Descripción del Proyecto
 
-Sistema web de gestión empresarial desarrollado para el Supermercado CARDAL, que permite a los trabajadores registrar su asistencia (entrada/salida) y mermas de productos, mientras que los supervisores pueden consultar reportes detallados para la toma de decisiones.
+Sistema web de gestión empresarial desarrollado para el Supermercado CARDAL, que permite a los trabajadores registrar su asistencia (entrada/salida), mermas de productos, mientras que los supervisores pueden consultar reportes detallados.
 
 **Proyecto Académico** - Técnico en Programación y Análisis de Sistemas
 
